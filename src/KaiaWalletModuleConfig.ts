@@ -1,17 +1,10 @@
-import { Chain as WagmiChain, mainnet } from "@wagmi/core/chains";
+import KaiaWalletSessionManager from "./KaiaWalletSessionManager.js";
 
-interface Chain extends WagmiChain {
-  faucetUrl?: string;
-}
-
-export interface IWalletModuleConfig {
-  chains: [Chain, ...Chain[]];
+interface IKaiaWalletModuleConfig {
   walletConnectProjectId: string;
 }
 
-class WalletModuleConfig implements IWalletModuleConfig {
-  public chains: [Chain, ...Chain[]] = [mainnet];
-
+class KaiaWalletModuleConfig implements IKaiaWalletModuleConfig {
   private _walletConnectProjectId?: string;
   public get walletConnectProjectId() {
     if (!this._walletConnectProjectId) {
@@ -23,12 +16,11 @@ class WalletModuleConfig implements IWalletModuleConfig {
     this._walletConnectProjectId = projectId;
   }
 
-  public init(options: IWalletModuleConfig) {
-    this.chains = options.chains;
+  public init(options: IKaiaWalletModuleConfig) {
     this.walletConnectProjectId = options.walletConnectProjectId;
 
-    //TODO:
+    KaiaWalletSessionManager.init();
   }
 }
 
-export default new WalletModuleConfig();
+export default new KaiaWalletModuleConfig();

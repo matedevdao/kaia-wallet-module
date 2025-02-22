@@ -1,1 +1,1 @@
-{"version":3,"file":"KlipConnector.d.ts","sourceRoot":"","sources":["../../src/wallet-connectors/KlipConnector.ts"],"names":[],"mappings":""}
+{"version":3,"file":"KlipConnector.d.ts","sourceRoot":"","sources":["../../src/wallet-connectors/KlipConnector.ts"],"names":[],"mappings":"AAAA,OAAO,sBAAsB,MAAM,6BAA6B,CAAC;AAEjE,cAAM,aAAc,YAAW,sBAAsB;CAAG;;AAExD,wBAAmC"}

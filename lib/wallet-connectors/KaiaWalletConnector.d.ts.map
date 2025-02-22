@@ -1,1 +1,1 @@
-{"version":3,"file":"KaiaWalletConnector.d.ts","sourceRoot":"","sources":["../../src/wallet-connectors/KaiaWalletConnector.ts"],"names":[],"mappings":""}
+{"version":3,"file":"KaiaWalletConnector.d.ts","sourceRoot":"","sources":["../../src/wallet-connectors/KaiaWalletConnector.ts"],"names":[],"mappings":"AAAA,OAAO,oBAAoB,MAAM,2BAA2B,CAAC;AAE7D,cAAM,mBAAoB,SAAQ,oBAAoB;CAAG;;AAEzD,wBAAyC"}

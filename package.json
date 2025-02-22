@@ -6,6 +6,9 @@
   "type": "module",
   "types": "./lib/index.d.ts",
   "main": "./lib/index.js",
-  "dependencies": {},
+  "dependencies": {
+    "@common-module/app-components": "^0.1.6",
+    "klip-sdk": "^2.3.3"
+  },
   "devDependencies": {}
 }
