@@ -21,17 +21,6 @@ class KaiaWalletSessionManager extends EventContainer<{
     UniversalKaiaWalletConnector.init(this.getConnectedWallet());
   }
 
-  public async readContract(options: {
-    chainId: number;
-    address: `0x${string}`;
-    abi: any;
-    functionName: string;
-    args: unknown[];
-  }): Promise<unknown> {
-    //TODO:
-    throw new Error("Not implemented");
-  }
-
   public async writeContract() {}
 }
 
