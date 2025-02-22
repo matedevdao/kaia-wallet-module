@@ -1,0 +1,1 @@
+//# sourceMappingURL=KlipIcon.d.ts.map

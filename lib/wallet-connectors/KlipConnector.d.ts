@@ -1,0 +1,1 @@
+//# sourceMappingURL=KlipConnector.d.ts.map

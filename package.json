@@ -6,8 +6,6 @@
   "type": "module",
   "types": "./lib/index.d.ts",
   "main": "./lib/index.js",
-  "dependencies": {
-    "@common-module/wallet": "^0.2.3"
-  },
+  "dependencies": {},
   "devDependencies": {}
 }

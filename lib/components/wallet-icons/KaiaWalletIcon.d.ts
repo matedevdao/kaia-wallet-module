@@ -1,0 +1,1 @@
+//# sourceMappingURL=KaiaWalletIcon.d.ts.map
