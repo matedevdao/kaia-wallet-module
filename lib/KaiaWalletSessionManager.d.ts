@@ -7,6 +7,9 @@ declare class KaiaWalletSessionManager extends EventContainer<{
     getConnectedAddress(): `0x${string}` | undefined;
     isConnected(): boolean;
     init(): void;
+    setConnectedWalletInfo(walletId: string, walletAddress: `0x${string}`): void;
+    connect(): Promise<void>;
+    disconnect(): void;
     writeContract(): Promise<void>;
 }
 declare const _default: KaiaWalletSessionManager;

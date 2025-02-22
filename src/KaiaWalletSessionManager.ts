@@ -1,6 +1,7 @@
 import { Store } from "@common-module/app";
 import { EventContainer } from "@common-module/ts";
 import UniversalKaiaWalletConnector from "./UniversalKaiaWalletConnector.js";
+import KaiaWalletConnectionModal from "./components/KaiaWalletConnectionModal.js";
 
 class KaiaWalletSessionManager extends EventContainer<{
   sessionChanged: (connected: boolean) => void;
@@ -21,7 +22,42 @@ class KaiaWalletSessionManager extends EventContainer<{
     UniversalKaiaWalletConnector.init(this.getConnectedWallet());
   }
 
-  public async writeContract() {}
+  public setConnectedWalletInfo(
+    walletId: string,
+    walletAddress: `0x${string}`,
+  ) {
+    const currentIsConnected = this.isConnected();
+
+    this.store.setPermanent("connectedWallet", walletId);
+    this.store.setPermanent("connectedAddress", walletAddress);
+
+    if (currentIsConnected !== this.isConnected()) {
+      this.emit("sessionChanged", this.isConnected());
+    }
+  }
+
+  public async connect() {
+    this.disconnect();
+    const result = await new KaiaWalletConnectionModal().waitForLogin();
+    this.setConnectedWalletInfo(result.walletId, result.walletAddress);
+  }
+
+  public disconnect() {
+    UniversalKaiaWalletConnector.disconnect();
+
+    const currentIsConnected = this.isConnected();
+
+    this.store.remove("connectedWallet");
+    this.store.remove("connectedAddress");
+
+    if (currentIsConnected !== this.isConnected()) {
+      this.emit("sessionChanged", this.isConnected());
+    }
+  }
+
+  public async writeContract() {
+    //TODO:
+  }
 }
 
 export default new KaiaWalletSessionManager();

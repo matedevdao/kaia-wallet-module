@@ -5,6 +5,9 @@ class UniversalKaiaWalletConnector {
 
   public init(walletId?: string) {
   }
+
+  public disconnect() {
+  }
 }
 
 export default new UniversalKaiaWalletConnector();
