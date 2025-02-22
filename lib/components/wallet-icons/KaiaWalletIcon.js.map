@@ -1,1 +1,1 @@
-{"version":3,"file":"KaiaWalletIcon.js","sourceRoot":"","sources":["../../../src/components/wallet-icons/KaiaWalletIcon.ts"],"names":[],"mappings":""}
+{"version":3,"file":"KaiaWalletIcon.js","sourceRoot":"","sources":["../../../src/components/wallet-icons/KaiaWalletIcon.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,MAAM,oBAAoB,CAAC;AAE7C,MAAM,CAAC,OAAO,OAAO,cAAe,SAAQ,OAAO;IACjD;QACE,KAAK,CAAC,mBAAmB,CAAC,CAAC;QAC3B,IAAI,CAAC,WAAW,CAAC,SAAS;YACxB;;;;;;;OAOC,CAAC;IACN,CAAC;CACF"}
