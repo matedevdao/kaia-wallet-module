@@ -1,5 +1,6 @@
+import WalletForKaiaConnector from "./wallet-connectors/WalletForKaiaConnector.js";
 declare class UniversalKaiaWalletConnector {
-    private connectors;
+    connectors: WalletForKaiaConnector[];
     init(walletId?: string): void;
     disconnect(): void;
 }

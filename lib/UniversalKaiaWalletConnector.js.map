@@ -1,1 +1,1 @@
-{"version":3,"file":"UniversalKaiaWalletConnector.js","sourceRoot":"","sources":["../src/UniversalKaiaWalletConnector.ts"],"names":[],"mappings":"AAEA,MAAM,4BAA4B;IACxB,UAAU,GAA6B,EAAE,CAAC;IAE3C,IAAI,CAAC,QAAiB;IAC7B,CAAC;IAEM,UAAU;IACjB,CAAC;CACF;AAED,eAAe,IAAI,4BAA4B,EAAE,CAAC"}
+{"version":3,"file":"UniversalKaiaWalletConnector.js","sourceRoot":"","sources":["../src/UniversalKaiaWalletConnector.ts"],"names":[],"mappings":"AAEA,MAAM,4BAA4B;IACzB,UAAU,GAA6B,EAAE,CAAC;IAE1C,IAAI,CAAC,QAAiB;IAC7B,CAAC;IAEM,UAAU;IACjB,CAAC;CACF;AAED,eAAe,IAAI,4BAA4B,EAAE,CAAC"}

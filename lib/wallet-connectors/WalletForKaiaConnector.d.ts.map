@@ -1,1 +1,1 @@
-{"version":3,"file":"WalletForKaiaConnector.d.ts","sourceRoot":"","sources":["../../src/wallet-connectors/WalletForKaiaConnector.ts"],"names":[],"mappings":"AAAA,MAAM,CAAC,OAAO,WAAW,sBAAsB;CAC9C"}
+{"version":3,"file":"WalletForKaiaConnector.d.ts","sourceRoot":"","sources":["../../src/wallet-connectors/WalletForKaiaConnector.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,MAAM,oBAAoB,CAAC;AAE7C,MAAM,CAAC,OAAO,WAAW,sBAAsB;IAC7C,UAAU,EAAE,MAAM,CAAC;IACnB,UAAU,EAAE,OAAO,CAAC;IACpB,OAAO,IAAI,OAAO,CAAC,IAAI,CAAC,CAAC;IACzB,UAAU,IAAI,IAAI,CAAC;CACpB"}
