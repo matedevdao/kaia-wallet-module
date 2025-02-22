@@ -1,7 +1,9 @@
 interface IKaiaWalletModuleConfig {
+    appName: string;
     walletConnectProjectId: string;
 }
 declare class KaiaWalletModuleConfig implements IKaiaWalletModuleConfig {
+    appName: string;
     private _walletConnectProjectId?;
     get walletConnectProjectId(): string;
     set walletConnectProjectId(projectId: string);

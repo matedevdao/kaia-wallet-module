@@ -1,10 +1,13 @@
 import KaiaWalletSessionManager from "./KaiaWalletSessionManager.js";
 
 interface IKaiaWalletModuleConfig {
+  appName: string;
   walletConnectProjectId: string;
 }
 
 class KaiaWalletModuleConfig implements IKaiaWalletModuleConfig {
+  public appName: string = "";
+
   private _walletConnectProjectId?: string;
   public get walletConnectProjectId() {
     if (!this._walletConnectProjectId) {
@@ -17,6 +20,7 @@ class KaiaWalletModuleConfig implements IKaiaWalletModuleConfig {
   }
 
   public init(options: IKaiaWalletModuleConfig) {
+    this.appName = options.appName;
     this.walletConnectProjectId = options.walletConnectProjectId;
 
     KaiaWalletSessionManager.init();
