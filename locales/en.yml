@@ -8,3 +8,7 @@ kaia_wallet_connection_modal:
     login_canceled: "Login canceled by user"
 kaia_wallet_button_group:
   button_title: "%{buttonText} with %{walletName}"
+klip_qr_modal:
+  guide: "Scan the QR code using a QR code reader or the Klip app.\nOpen the Klip app ▶ Tap the QR button at the bottom ▶ Scan the code and log in."
+  button:
+    cancel: "Cancel"
