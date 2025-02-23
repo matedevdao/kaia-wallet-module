@@ -17,7 +17,10 @@ declare class KaiaWalletSessionManager extends EventContainer<{
         abi: Abi;
         functionName: string;
         args: unknown[];
-    }): Promise<any>;
+    }): Promise<void>;
+    private showConnectWalletDialog;
+    private showWalletMismatchDialog;
+    private showSwitchNetworkDialog;
 }
 declare const _default: KaiaWalletSessionManager;
 export default _default;

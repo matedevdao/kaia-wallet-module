@@ -37,21 +37,22 @@ class UniversalKaiaWalletConnector {
         return connector;
       }
     }
+    throw new Error("Wallet not found");
   }
 
   public getChainId(walletId: string) {
     const connector = this.getWalletConnector(walletId);
-    return connector?.getChainId();
+    return connector.getChainId();
   }
 
   public async switchChain(walletId: string, chainId: number) {
     const connector = this.getWalletConnector(walletId);
-    return connector?.switchChain(chainId);
+    return connector.switchChain(chainId);
   }
 
   public getAddress(walletId: string) {
     const connector = this.getWalletConnector(walletId);
-    return connector?.getAddress();
+    return connector.getAddress();
   }
 
   public async writeContract(walletId: string, parameters: {
@@ -62,7 +63,8 @@ class UniversalKaiaWalletConnector {
     args: unknown[];
     account: `0x${string}`;
   }) {
-    //TODO: Implement
+    const connector = this.getWalletConnector(walletId);
+    return connector.writeContract(parameters);
   }
 }
 

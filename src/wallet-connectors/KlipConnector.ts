@@ -1,6 +1,7 @@
 // @ts-ignore
 import { getResult, prepare, request } from "klip-sdk";
 
+import { Abi } from "abitype";
 import QrCode from "qrcode";
 import KaiaWalletModuleConfig from "../KaiaWalletModuleConfig.js";
 import KlipQrModal from "../components/KlipQrModal.js";
@@ -40,6 +41,20 @@ class KlipConnector implements WalletForKaiaConnector {
       bappName: KaiaWalletModuleConfig.appName,
     });
     return (await this.request("QR 코드로 Klip 접속", res)).klaytn_address;
+  }
+
+  public async writeContract(
+    parameters: {
+      chainId: 8217 | 1001;
+      address: `0x${string}`;
+      abi: Abi;
+      functionName: string;
+      args: unknown[];
+      account: `0x${string}`;
+    },
+  ) {
+    //TODO: Implement
+    throw new Error("Method not implemented.");
   }
 }
 

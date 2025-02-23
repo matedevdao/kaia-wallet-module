@@ -1,9 +1,13 @@
 import { Config, ReadContractParameters } from "@wagmi/core";
-import { Chain } from "@wagmi/core/chains";
+import { Chain as WagmiChain } from "@wagmi/core/chains";
 import { type Abi, type ContractFunctionArgs, type ContractFunctionName } from "viem";
+interface Chain extends WagmiChain {
+    faucetUrl?: string;
+}
 declare class KaiaRpcConnector {
     private chains;
     private config;
+    getChains(): [Chain, ...Chain[]];
     getWagmiConfig(): Config<[Chain, ...Chain[]], {
         [k: string]: import("viem").HttpTransport;
     }, readonly import("@wagmi/core").CreateConnectorFn[]>;
