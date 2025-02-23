@@ -4,7 +4,7 @@ export default class KaiaWalletIcon extends DomNode {
   constructor() {
     super(".icon.kaia-wallet");
     this.htmlElement.innerHTML =
-      `<svg version="1.0" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg">
+      `<svg width="40" height="40" version="1.0" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg">
 <path transform="translate(0)" d="m0 0h480v480h-480v-480z" fill="#bff009"/>
 <g transform="translate(0 480) scale(.1 -.1)">
 <path d="m910 3163c16-49 83-259 150-468s146-454 175-545 99-306 155-477l101-313h85c46 0 84 3 84 7 0 3-22 74-49 157s-88 270-135 416c-182 567-226 705-322 1002l-99 308h-87-87l29-87z"/>

@@ -18,19 +18,31 @@ class KlipConnector implements WalletForKaiaConnector {
   private qrModal: KlipQrModal | undefined;
 
   private async request(title: string, res: any): Promise<any> {
-    request(res.request_key, async () => {
+    let interval: any;
+    let resultReceived = false;
+    let reject: any;
+
+    request(res.request_key, undefined, async () => {
       const qr = await QrCode.toDataURL(
         `https://klipwallet.com/?target=/a2a?request_key=${res.request_key}`,
       );
       this.qrModal = new KlipQrModal(title, qr);
+      this.qrModal.on("remove", () => {
+        this.qrModal = undefined;
+        clearInterval(interval);
+        if (!resultReceived) {
+          reject(new Error("User cancelled"));
+        }
+      });
     });
 
-    return new Promise((resolve) => {
-      const interval = setInterval(async () => {
+    return new Promise((resolve, _reject) => {
+      reject = _reject;
+      interval = setInterval(async () => {
         const result = await getResult(res.request_key);
         if (result.result) {
+          resultReceived = true;
           this.qrModal?.remove();
-          this.qrModal = undefined;
           clearInterval(interval);
           setTimeout(() => resolve(result.result), 2000);
         }
