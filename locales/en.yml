@@ -1,0 +1,8 @@
+kaia_wallet_connection_modal:
+  title: "Connect Your Crypto Wallet"
+  button:
+    connect: "Connect"
+    cancel: "Cancel"
+  error:
+    no_accounts: "No accounts found"
+    login_canceled: "Login canceled by user"

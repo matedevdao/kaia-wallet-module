@@ -8,6 +8,7 @@ import KlipIcon from "../components/wallet-icons/KlipIcon.js";
 import WalletForKaiaConnector from "./WalletForKaiaConnector.js";
 
 class KlipConnector implements WalletForKaiaConnector {
+  public walletId = "klip";
   public walletName = "Klip";
   public walletIcon = new KlipIcon();
 
@@ -34,7 +35,7 @@ class KlipConnector implements WalletForKaiaConnector {
     });
   }
 
-  public async connect(): Promise<string | undefined> {
+  public async connect(): Promise<`0x${string}` | undefined> {
     const res = await prepare.auth({
       bappName: KaiaWalletModuleConfig.appName,
     });

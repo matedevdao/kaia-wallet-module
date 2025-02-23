@@ -2,6 +2,7 @@ import { DomNode } from "@common-module/app";
 import { Config, CreateConnectorFn } from "@wagmi/core";
 import WalletForKaiaConnector from "./WalletForKaiaConnector.js";
 export default abstract class WagmiWalletConnector implements WalletForKaiaConnector {
+    abstract walletId: string;
     abstract walletName: string;
     abstract walletIcon: DomNode;
     private _config?;
@@ -11,6 +12,6 @@ export default abstract class WagmiWalletConnector implements WalletForKaiaConne
     get wagmiConnector(): CreateConnectorFn;
     set wagmiConnector(connector: CreateConnectorFn);
     abstract init(config: Config): void;
-    connect(): Promise<string | undefined>;
+    connect(): Promise<`0x${string}` | undefined>;
 }
 //# sourceMappingURL=WagmiWalletConnector.d.ts.map

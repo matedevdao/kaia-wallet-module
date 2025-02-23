@@ -4,6 +4,7 @@ import KaiaWalletIcon from "../components/wallet-icons/KaiaWalletIcon.js";
 import WagmiWalletConnector from "./WagmiWalletConnector.js";
 
 class KaiaWalletConnector extends WagmiWalletConnector {
+  public walletId = "kaia-wallet";
   public walletName = "Kaia Wallet";
   public walletIcon = new KaiaWalletIcon();
 

@@ -4,6 +4,7 @@ import WalletForKaiaConnector from "./WalletForKaiaConnector.js";
 
 export default abstract class WagmiWalletConnector
   implements WalletForKaiaConnector {
+  abstract walletId: string;
   abstract walletName: string;
   abstract walletIcon: DomNode;
 
@@ -27,7 +28,7 @@ export default abstract class WagmiWalletConnector
 
   public abstract init(config: Config): void;
 
-  public async connect(): Promise<string | undefined> {
+  public async connect(): Promise<`0x${string}` | undefined> {
     const result = await connect(this.config, {
       connector: this.wagmiConnector,
     });

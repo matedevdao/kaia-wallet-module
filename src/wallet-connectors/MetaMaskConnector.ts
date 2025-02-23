@@ -4,6 +4,7 @@ import MetaMaskIcon from "../components/wallet-icons/MetaMaskIcon.js";
 import WagmiWalletConnector from "./WagmiWalletConnector.js";
 
 class MetaMaskConnector extends WagmiWalletConnector {
+  public walletId = "metamask";
   public walletName = "MetaMask";
   public walletIcon = new MetaMaskIcon();
 
@@ -12,7 +13,7 @@ class MetaMaskConnector extends WagmiWalletConnector {
     this.wagmiConnector = metaMask();
   }
 
-  public async connect(): Promise<string | undefined> {
+  public async connect(): Promise<`0x${string}` | undefined> {
     const result = await new Promise<ConnectReturnType<Config>>(
       (resolve, reject) => {
         let found = false;

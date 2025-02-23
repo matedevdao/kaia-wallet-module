@@ -1,4 +1,7 @@
-import { StructuredModal } from "@common-module/app-components";
+import { el, msg } from "@common-module/app";
+import { Button, StructuredModal } from "@common-module/app-components";
+import WalletForKaiaConnector from "../wallet-connectors/WalletForKaiaConnector.js";
+import KaiaWalletButtonGrouop from "./KaiaWalletButtonGrouop.js";
 
 interface ConnectionResult {
   walletId: string;
@@ -11,6 +14,38 @@ export default class KaiaWalletConnectionModal extends StructuredModal {
 
   constructor() {
     super(".kaia-wallet-connection-modal", false);
+
+    this.appendToHeader(el("h1", msg("kaia_wallet_connection_modal.title")));
+    this.appendToMain(
+      new KaiaWalletButtonGrouop(
+        "Connect",
+        (walletConnector) => this.handleConnect(walletConnector),
+      ),
+    );
+    this.appendToFooter(
+      new Button(".cancel", {
+        title: msg("kaia_wallet_connection_modal.button.cancel"),
+        onClick: () => this.remove(),
+      }),
+    );
+
+    this.on(
+      "remove",
+      () => this.rejectConnection?.(new Error("Login canceled by user")),
+    );
+  }
+
+  private async handleConnect(walletConnector: WalletForKaiaConnector) {
+    const walletAddress = await walletConnector.connect();
+    if (!walletAddress) throw new Error("No accounts found");
+
+    this.resolveConnection?.({
+      walletId: walletConnector.walletId,
+      walletAddress,
+    });
+
+    this.rejectConnection = undefined;
+    this.remove();
   }
 
   public async waitForLogin(): Promise<ConnectionResult> {

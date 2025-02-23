@@ -1,0 +1,8 @@
+kaia_wallet_connection_modal:
+  title: "암호화폐 지갑 연결"
+  button:
+    connect: "연결"
+    cancel: "취소"
+  error:
+    no_accounts: "계정을 찾을 수 없습니다."
+    login_canceled: "사용자가 로그인을 취소했습니다."

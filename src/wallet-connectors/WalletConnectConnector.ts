@@ -5,6 +5,7 @@ import KaiaWalletModuleConfig from "../KaiaWalletModuleConfig.js";
 import WagmiWalletConnector from "./WagmiWalletConnector.js";
 
 class WalletConnectConnector extends WagmiWalletConnector {
+  public walletId = "walletconnect";
   public walletName = "WalletConnect";
   public walletIcon = new WalletConnectIcon();
 

@@ -7,6 +7,7 @@ export default class KaiaWalletConnectionModal extends StructuredModal {
     private resolveConnection?;
     private rejectConnection?;
     constructor();
+    private handleConnect;
     waitForLogin(): Promise<ConnectionResult>;
 }
 export {};
