@@ -11,7 +11,7 @@ declare class KlipConnector implements WalletForKaiaConnector {
     connect(): Promise<`0x${string}` | undefined>;
     disconnect(): Promise<void>;
     getChainId(): number | undefined;
-    switchChain(chainId: number): Promise<number>;
+    switchChain(): Promise<number>;
     getAddress(): `0x${string}` | undefined;
     private processParams;
     writeContract(parameters: {

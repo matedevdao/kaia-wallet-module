@@ -53,13 +53,11 @@ class KlipConnector implements WalletForKaiaConnector {
   }
 
   public getChainId(): number | undefined {
-    //TODO: Implement
-    throw new Error("Method not implemented.");
+    return 8217;
   }
 
-  public switchChain(chainId: number): Promise<number> {
-    //TODO: Implement
-    throw new Error("Method not implemented.");
+  public switchChain(): Promise<number> {
+    throw new Error("Klip does not support chain switching");
   }
 
   public getAddress(): `0x${string}` | undefined {
