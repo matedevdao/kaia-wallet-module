@@ -1,4 +1,12 @@
+import { I18nMessageManager } from "@common-module/app";
+import messages_en from "../locales/en.yml";
+import messages_ko from "../locales/ko.yml";
 import KaiaWalletSessionManager from "./KaiaWalletSessionManager.js";
+
+I18nMessageManager.addMessagesBulk({
+  en: messages_en,
+  ko: messages_ko,
+});
 
 interface IKaiaWalletModuleConfig {
   appName: string;

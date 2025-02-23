@@ -1,5 +1,6 @@
 import { DomNode } from "@common-module/app";
-import { Config, connect, CreateConnectorFn } from "@wagmi/core";
+import { connect, CreateConnectorFn, reconnect } from "@wagmi/core";
+import KaiaRpcConnector from "../KaiaRpcConnector.js";
 import WalletForKaiaConnector from "./WalletForKaiaConnector.js";
 
 export default abstract class WagmiWalletConnector
@@ -7,15 +8,6 @@ export default abstract class WagmiWalletConnector
   abstract walletId: string;
   abstract walletName: string;
   abstract walletIcon: DomNode;
-
-  private _config?: Config;
-  protected get config() {
-    if (!this._config) throw new Error("Config not initialized");
-    return this._config;
-  }
-  protected set config(config: Config) {
-    this._config = config;
-  }
 
   private _wagmiConnector?: CreateConnectorFn;
   public get wagmiConnector() {
@@ -26,12 +18,18 @@ export default abstract class WagmiWalletConnector
     this._wagmiConnector = connector;
   }
 
-  public abstract init(config: Config): void;
+  public abstract init(): void;
 
   public async connect(): Promise<`0x${string}` | undefined> {
-    const result = await connect(this.config, {
+    const result = await connect(KaiaRpcConnector.getWagmiConfig(), {
       connector: this.wagmiConnector,
     });
     return result.accounts[0];
+  }
+
+  public async reconnect() {
+    reconnect(KaiaRpcConnector.getWagmiConfig(), {
+      connectors: [this.wagmiConnector],
+    });
   }
 }

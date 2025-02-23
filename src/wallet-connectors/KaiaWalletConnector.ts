@@ -1,5 +1,4 @@
 import { injected } from "@wagmi/connectors";
-import { Config } from "@wagmi/core";
 import KaiaWalletIcon from "../components/wallet-icons/KaiaWalletIcon.js";
 import WagmiWalletConnector from "./WagmiWalletConnector.js";
 
@@ -8,8 +7,7 @@ class KaiaWalletConnector extends WagmiWalletConnector {
   public walletName = "Kaia Wallet";
   public walletIcon = new KaiaWalletIcon();
 
-  public init(config: Config) {
-    this.config = config;
+  public init() {
     this.wagmiConnector = injected({
       target() {
         return {

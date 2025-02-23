@@ -1,8 +1,12 @@
 import { Config, ReadContractParameters } from "@wagmi/core";
+import { Chain } from "@wagmi/core/chains";
 import { type Abi, type ContractFunctionArgs, type ContractFunctionName } from "viem";
 declare class KaiaRpcConnector {
     private chains;
     private config;
+    getWagmiConfig(): Config<[Chain, ...Chain[]], {
+        [k: string]: import("viem").HttpTransport;
+    }, readonly import("@wagmi/core").CreateConnectorFn[]>;
     readContract<const abi extends Abi | readonly unknown[], functionName extends ContractFunctionName<abi, "pure" | "view">, args extends ContractFunctionArgs<abi, "pure" | "view", functionName>>(parameters: ReadContractParameters<abi, functionName, args, Config>): Promise<import("viem").ContractFunctionReturnType<abi, "pure" | "view", functionName, args>>;
 }
 declare const _default: KaiaRpcConnector;

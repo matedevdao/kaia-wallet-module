@@ -21,6 +21,10 @@ class KaiaRpcConnector {
     ),
   });
 
+  public getWagmiConfig() {
+    return this.config;
+  }
+
   public async readContract<
     const abi extends Abi | readonly unknown[],
     functionName extends ContractFunctionName<abi, "pure" | "view">,

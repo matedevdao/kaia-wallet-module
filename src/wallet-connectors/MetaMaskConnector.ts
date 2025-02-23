@@ -1,6 +1,7 @@
 import { metaMask } from "@wagmi/connectors";
 import { Config, connect, ConnectReturnType } from "@wagmi/core";
 import MetaMaskIcon from "../components/wallet-icons/MetaMaskIcon.js";
+import KaiaRpcConnector from "../KaiaRpcConnector.js";
 import WagmiWalletConnector from "./WagmiWalletConnector.js";
 
 class MetaMaskConnector extends WagmiWalletConnector {
@@ -8,8 +9,7 @@ class MetaMaskConnector extends WagmiWalletConnector {
   public walletName = "MetaMask";
   public walletIcon = new MetaMaskIcon();
 
-  public init(config: Config) {
-    this.config = config;
+  public init() {
     this.wagmiConnector = metaMask();
   }
 
@@ -30,8 +30,9 @@ class MetaMaskConnector extends WagmiWalletConnector {
           }
         }, 1000);
 
-        connect(this.config, { connector: this.wagmiConnector })
-          .then((result) => resolve(result))
+        connect(KaiaRpcConnector.getWagmiConfig(), {
+          connector: this.wagmiConnector,
+        }).then((result) => resolve(result as any))
           .catch((error) => reject(error))
           .finally(() => clearInterval(findingModelInterval));
       },
