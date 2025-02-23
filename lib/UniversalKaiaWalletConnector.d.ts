@@ -15,6 +15,7 @@ declare class UniversalKaiaWalletConnector {
         functionName: string;
         args: unknown[];
         account: `0x${string}`;
+        value?: bigint;
     }): Promise<void>;
 }
 declare const _default: UniversalKaiaWalletConnector;

@@ -1,6 +1,7 @@
 // @ts-ignore
 import { getResult, prepare, request } from "klip-sdk";
 
+import { Store } from "@common-module/app";
 import { Abi } from "abitype";
 import QrCode from "qrcode";
 import KaiaWalletModuleConfig from "../KaiaWalletModuleConfig.js";
@@ -13,6 +14,7 @@ class KlipConnector implements WalletForKaiaConnector {
   public walletName = "Klip";
   public walletIcon = new KlipIcon();
 
+  private store = new Store("klip-connector");
   private qrModal: KlipQrModal | undefined;
 
   private async request(title: string, res: any): Promise<any> {
@@ -40,7 +42,14 @@ class KlipConnector implements WalletForKaiaConnector {
     const res = await prepare.auth({
       bappName: KaiaWalletModuleConfig.appName,
     });
-    return (await this.request("QR 코드로 Klip 접속", res)).klaytn_address;
+    const address =
+      (await this.request("QR 코드로 Klip 접속", res)).klaytn_address;
+    this.store.setPermanent("address", address);
+    return address;
+  }
+
+  public async disconnect() {
+    this.store.remove("address");
   }
 
   public getChainId(): number | undefined {
@@ -54,8 +63,22 @@ class KlipConnector implements WalletForKaiaConnector {
   }
 
   public getAddress(): `0x${string}` | undefined {
-    //TODO: Implement
-    throw new Error("Method not implemented.");
+    return this.store.get<`0x${string}`>("address");
+  }
+
+  private processParams(param: any): any {
+    if (Array.isArray(param)) {
+      return param.map(this.processParams);
+    } else if (typeof param === "bigint") {
+      return param.toString();
+    } else if (typeof param === "object" && param !== null) {
+      const processedObject: any = {};
+      Object.keys(param).forEach((key) => {
+        processedObject[key] = this.processParams(param[key]);
+      });
+      return processedObject;
+    }
+    return param;
   }
 
   public async writeContract(
@@ -66,10 +89,21 @@ class KlipConnector implements WalletForKaiaConnector {
       functionName: string;
       args: unknown[];
       account: `0x${string}`;
+      value?: bigint;
     },
   ) {
-    //TODO: Implement
-    throw new Error("Method not implemented.");
+    const res = await prepare.executeContract({
+      bappName: KaiaWalletModuleConfig.appName,
+      to: parameters.address,
+      abi: JSON.stringify(
+        parameters.abi.filter((abi) =>
+          abi.type === "function" && abi.name === parameters.functionName
+        )[0],
+      ),
+      params: JSON.stringify((parameters.args ?? []).map(this.processParams)),
+      value: (parameters.value === undefined ? 0 : parameters.value).toString(),
+    });
+    await this.request("스마트 계약 실행", res);
   }
 }
 

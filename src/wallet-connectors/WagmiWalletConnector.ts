@@ -3,6 +3,7 @@ import {
   Config,
   connect,
   CreateConnectorFn,
+  disconnect,
   getAccount,
   getBalance,
   reconnect,
@@ -48,6 +49,10 @@ export default abstract class WagmiWalletConnector
     reconnect(KaiaRpcConnector.getWagmiConfig(), {
       connectors: [this.wagmiConnector],
     });
+  }
+
+  public disconnect() {
+    disconnect(KaiaRpcConnector.getWagmiConfig());
   }
 
   public getChainId() {

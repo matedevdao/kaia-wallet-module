@@ -12,6 +12,7 @@ export default abstract class WagmiWalletConnector implements WalletForKaiaConne
     abstract init(): void;
     connect(): Promise<`0x${string}` | undefined>;
     reconnect(): Promise<void>;
+    disconnect(): void;
     getChainId(): number | undefined;
     switchChain(chainId: number): Promise<number>;
     getAddress(): `0x${string}` | undefined;

@@ -6,6 +6,7 @@ export default interface WalletForKaiaConnector {
   walletName: string;
   walletIcon: DomNode;
   connect(): Promise<`0x${string}` | undefined>;
+  disconnect(): void;
   getChainId(): number | undefined;
   switchChain(chainId: number): Promise<number>;
   getAddress(): `0x${string}` | undefined;
@@ -16,5 +17,6 @@ export default interface WalletForKaiaConnector {
     functionName: string;
     args: unknown[];
     account: `0x${string}`;
+    value?: bigint;
   }): Promise<void>;
 }

@@ -5,12 +5,15 @@ declare class KlipConnector implements WalletForKaiaConnector {
     walletId: string;
     walletName: string;
     walletIcon: KlipIcon;
+    private store;
     private qrModal;
     private request;
     connect(): Promise<`0x${string}` | undefined>;
+    disconnect(): Promise<void>;
     getChainId(): number | undefined;
     switchChain(chainId: number): Promise<number>;
     getAddress(): `0x${string}` | undefined;
+    private processParams;
     writeContract(parameters: {
         chainId: 8217 | 1001;
         address: `0x${string}`;
@@ -18,6 +21,7 @@ declare class KlipConnector implements WalletForKaiaConnector {
         functionName: string;
         args: unknown[];
         account: `0x${string}`;
+        value?: bigint;
     }): Promise<void>;
 }
 declare const _default: KlipConnector;

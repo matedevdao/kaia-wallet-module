@@ -1,6 +1,4 @@
-import { disconnect } from "@wagmi/core";
 import { Abi } from "viem";
-import KaiaRpcConnector from "./KaiaRpcConnector.js";
 import KaiaWalletConnector from "./wallet-connectors/KaiaWalletConnector.js";
 import KlipConnector from "./wallet-connectors/KlipConnector.js";
 import MetaMaskConnector from "./wallet-connectors/MetaMaskConnector.js";
@@ -28,7 +26,9 @@ class UniversalKaiaWalletConnector {
   }
 
   public disconnect() {
-    disconnect(KaiaRpcConnector.getWagmiConfig());
+    for (const connector of this.connectors) {
+      connector.disconnect();
+    }
   }
 
   private getWalletConnector(walletId: string) {
@@ -62,6 +62,7 @@ class UniversalKaiaWalletConnector {
     functionName: string;
     args: unknown[];
     account: `0x${string}`;
+    value?: bigint;
   }) {
     const connector = this.getWalletConnector(walletId);
     return connector.writeContract(parameters);
