@@ -18,7 +18,7 @@ export default class KaiaWalletConnectionModal extends StructuredModal {
     this.appendToHeader(el("h1", msg("kaia_wallet_connection_modal.title")));
     this.appendToMain(
       new KaiaWalletButtonGrouop(
-        "Connect",
+        msg("kaia_wallet_connection_modal.button.connect"),
         (walletConnector) => this.handleConnect(walletConnector),
       ),
     );

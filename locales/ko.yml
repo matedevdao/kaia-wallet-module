@@ -6,3 +6,5 @@ kaia_wallet_connection_modal:
   error:
     no_accounts: "계정을 찾을 수 없습니다."
     login_canceled: "사용자가 로그인을 취소했습니다."
+kaia_wallet_button_group:
+  button_title: "%{walletName}(으)로 %{buttonText}"

@@ -6,3 +6,5 @@ kaia_wallet_connection_modal:
   error:
     no_accounts: "No accounts found"
     login_canceled: "Login canceled by user"
+kaia_wallet_button_group:
+  button_title: "%{buttonText} with %{walletName}"

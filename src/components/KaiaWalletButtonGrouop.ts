@@ -1,6 +1,7 @@
 import { Button, ButtonGroup, ButtonType } from "@common-module/app-components";
 import UniversalKaiaWalletConnector from "../UniversalKaiaWalletConnector.js";
 import WalletForKaiaConnector from "../wallet-connectors/WalletForKaiaConnector.js";
+import { msg } from "@common-module/app";
 
 export default class KaiaWalletButtonGrouop extends ButtonGroup {
   constructor(
@@ -13,7 +14,10 @@ export default class KaiaWalletButtonGrouop extends ButtonGroup {
         new Button({
           type: ButtonType.Outlined,
           icon: connector.walletIcon.clone(),
-          title: `${buttonText} with ${connector.walletName}`,
+          title: msg("kaia_wallet_button_group.button_title", {
+            buttonText,
+            walletName: connector.walletName,
+          }),
           onClick: () => onWalletSelect(connector),
         })
       ),
