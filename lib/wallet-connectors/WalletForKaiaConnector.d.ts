@@ -18,5 +18,6 @@ export default interface WalletForKaiaConnector {
         account: `0x${string}`;
         value?: bigint;
     }): Promise<void>;
+    signMessage(walletAddress: `0x${string}`, message: string): Promise<string>;
 }
 //# sourceMappingURL=WalletForKaiaConnector.d.ts.map

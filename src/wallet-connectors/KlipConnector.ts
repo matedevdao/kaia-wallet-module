@@ -115,6 +115,15 @@ class KlipConnector implements WalletForKaiaConnector {
     });
     await this.request("스마트 계약 실행", res);
   }
+
+  public async signMessage(_: `0x${string}`, message: string): Promise<string> {
+    const res = await prepare.signMessage({
+      bappName: KaiaWalletModuleConfig.appName,
+      value: message,
+    });
+    const data = await this.request("QR 코드로 메시지 서명", res);
+    return data.signature;
+  }
 }
 
 export default new KlipConnector();

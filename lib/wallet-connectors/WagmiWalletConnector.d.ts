@@ -18,5 +18,6 @@ export default abstract class WagmiWalletConnector implements WalletForKaiaConne
     getAddress(): `0x${string}` | undefined;
     private getBalance;
     writeContract<const abi extends Abi | readonly unknown[], functionName extends ContractFunctionName<abi, "nonpayable" | "payable">, args extends ContractFunctionArgs<abi, "nonpayable" | "payable", functionName>, chainId extends Config["chains"][number]["id"]>(parameters: WriteContractParameters<abi, functionName, args, Config, chainId>): Promise<void>;
+    signMessage(walletAddress: `0x${string}`, message: string): Promise<`0x${string}`>;
 }
 //# sourceMappingURL=WagmiWalletConnector.d.ts.map

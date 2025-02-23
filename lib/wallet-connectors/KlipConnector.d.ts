@@ -23,6 +23,7 @@ declare class KlipConnector implements WalletForKaiaConnector {
         account: `0x${string}`;
         value?: bigint;
     }): Promise<void>;
+    signMessage(_: `0x${string}`, message: string): Promise<string>;
 }
 declare const _default: KlipConnector;
 export default _default;

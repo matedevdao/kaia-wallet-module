@@ -7,6 +7,7 @@ import {
   getAccount,
   getBalance,
   reconnect,
+  signMessage,
   switchChain,
   waitForTransactionReceipt,
   writeContract,
@@ -120,5 +121,12 @@ export default abstract class WagmiWalletConnector
       KaiaRpcConnector.getWagmiConfig(),
       { hash },
     );
+  }
+
+  public async signMessage(walletAddress: `0x${string}`, message: string) {
+    return await signMessage(KaiaRpcConnector.getWagmiConfig(), {
+      account: walletAddress,
+      message,
+    });
   }
 }
