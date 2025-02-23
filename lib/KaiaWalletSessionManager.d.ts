@@ -1,4 +1,5 @@
 import { EventContainer } from "@common-module/ts";
+import { Abi } from "viem";
 declare class KaiaWalletSessionManager extends EventContainer<{
     sessionChanged: (connected: boolean) => void;
 }> {
@@ -10,7 +11,13 @@ declare class KaiaWalletSessionManager extends EventContainer<{
     setConnectedWalletInfo(walletId: string, walletAddress: `0x${string}`): void;
     connect(): Promise<void>;
     disconnect(): void;
-    writeContract(): Promise<void>;
+    writeContract(parameters: {
+        chainId: 8217 | 1001;
+        address: `0x${string}`;
+        abi: Abi;
+        functionName: string;
+        args: unknown[];
+    }): Promise<any>;
 }
 declare const _default: KaiaWalletSessionManager;
 export default _default;
