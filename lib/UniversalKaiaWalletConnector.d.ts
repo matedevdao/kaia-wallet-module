@@ -5,9 +5,9 @@ declare class UniversalKaiaWalletConnector {
     init(walletId?: string): void;
     disconnect(): void;
     private getWalletConnector;
-    getChainId(walletId: string): any;
-    switchChain(walletId: string, chainId: number): Promise<any>;
-    getAddress(walletId: string): any;
+    getChainId(walletId: string): number | undefined;
+    switchChain(walletId: string, chainId: number): Promise<number>;
+    getAddress(walletId: string): `0x${string}` | undefined;
     writeContract(walletId: string, parameters: {
         chainId: 8217 | 1001;
         address: `0x${string}`;

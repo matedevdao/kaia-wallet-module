@@ -43,6 +43,21 @@ class KlipConnector implements WalletForKaiaConnector {
     return (await this.request("QR 코드로 Klip 접속", res)).klaytn_address;
   }
 
+  public getChainId(): number | undefined {
+    //TODO: Implement
+    throw new Error("Method not implemented.");
+  }
+
+  public switchChain(chainId: number): Promise<number> {
+    //TODO: Implement
+    throw new Error("Method not implemented.");
+  }
+
+  public getAddress(): `0x${string}` | undefined {
+    //TODO: Implement
+    throw new Error("Method not implemented.");
+  }
+
   public async writeContract(
     parameters: {
       chainId: 8217 | 1001;

@@ -3,7 +3,10 @@ import {
   Config,
   connect,
   CreateConnectorFn,
+  getAccount,
+  getBalance,
   reconnect,
+  switchChain,
   waitForTransactionReceipt,
   writeContract,
   WriteContractParameters,
@@ -45,6 +48,31 @@ export default abstract class WagmiWalletConnector
     reconnect(KaiaRpcConnector.getWagmiConfig(), {
       connectors: [this.wagmiConnector],
     });
+  }
+
+  public getChainId() {
+    return getAccount(KaiaRpcConnector.getWagmiConfig()).chainId;
+  }
+
+  public async switchChain(chainId: number) {
+    const result = await switchChain(KaiaRpcConnector.getWagmiConfig(), {
+      chainId,
+    });
+    return result.id;
+  }
+
+  public getAddress() {
+    return getAccount(KaiaRpcConnector.getWagmiConfig()).address;
+  }
+
+  private async getBalance(
+    chainId: number | undefined,
+    walletAddress: `0x${string}`,
+  ) {
+    return (await getBalance(KaiaRpcConnector.getWagmiConfig(), {
+      chainId,
+      address: walletAddress,
+    })).value;
   }
 
   public async writeContract<
