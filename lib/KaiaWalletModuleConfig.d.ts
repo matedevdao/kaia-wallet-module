@@ -1,4 +1,4 @@
-interface IKaiaWalletModuleConfig {
+export interface IKaiaWalletModuleConfig {
     appName: string;
     walletConnectProjectId: string;
 }

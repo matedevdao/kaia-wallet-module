@@ -3,7 +3,7 @@ import UniversalKaiaWalletConnector from "../UniversalKaiaWalletConnector.js";
 import WalletForKaiaConnector from "../wallet-connectors/WalletForKaiaConnector.js";
 import { msg } from "@common-module/app";
 
-export default class KaiaWalletButtonGrouop extends ButtonGroup {
+export default class KaiaWalletButtonGroup extends ButtonGroup {
   constructor(
     buttonText: string,
     onWalletSelect: (walletConnector: WalletForKaiaConnector) => void,

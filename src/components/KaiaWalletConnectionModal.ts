@@ -1,7 +1,7 @@
 import { el, msg } from "@common-module/app";
 import { Button, StructuredModal } from "@common-module/app-components";
 import WalletForKaiaConnector from "../wallet-connectors/WalletForKaiaConnector.js";
-import KaiaWalletButtonGrouop from "./KaiaWalletButtonGrouop.js";
+import KaiaWalletButtonGrouop from "./KaiaWalletButtonGroup.js";
 
 interface ConnectionResult {
   walletId: string;

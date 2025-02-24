@@ -8,7 +8,7 @@ I18nMessageManager.addMessagesBulk({
   ko: messages_ko,
 });
 
-interface IKaiaWalletModuleConfig {
+export interface IKaiaWalletModuleConfig {
   appName: string;
   walletConnectProjectId: string;
 }
