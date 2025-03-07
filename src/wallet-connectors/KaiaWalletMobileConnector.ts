@@ -1,4 +1,4 @@
-import { Store } from "@common-module/app";
+import { BrowserInfo, Store } from "@common-module/app";
 import { Abi } from "abitype";
 import QrCode from "qrcode";
 import KaiaWalletModuleConfig from "../KaiaWalletModuleConfig.js";
@@ -19,17 +19,21 @@ class KaiaWalletMobileConnector implements WalletForKaiaConnector {
     let resultReceived = false;
     let reject: any;
 
-    const qr = await QrCode.toDataURL(
-      `https://app.kaiawallet.io/a/${requestKey}`,
-    );
-    this.qrModal = new KaiaWalletMobileQrModal(title, qr);
-    this.qrModal.on("remove", () => {
-      this.qrModal = undefined;
-      clearInterval(interval);
-      if (!resultReceived) {
-        reject(new Error("User cancelled"));
-      }
-    });
+    if (BrowserInfo.isMobileDevice()) {
+      location.href = `kaikas://wallet/api?request_key=${requestKey}`;
+    } else {
+      const qr = await QrCode.toDataURL(
+        `https://app.kaiawallet.io/a/${requestKey}`,
+      );
+      this.qrModal = new KaiaWalletMobileQrModal(title, qr);
+      this.qrModal.on("remove", () => {
+        this.qrModal = undefined;
+        clearInterval(interval);
+        if (!resultReceived) {
+          reject(new Error("User cancelled"));
+        }
+      });
+    }
 
     return new Promise((resolve, _reject) => {
       reject = _reject;
