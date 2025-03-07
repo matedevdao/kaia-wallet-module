@@ -13,7 +13,11 @@ class KaiaWalletConnector extends WagmiWalletConnector {
         return {
           id: "kaia-wallet",
           name: "Kaia Wallet",
-          provider: (window as any).klaytn,
+          provider: (window as any).klaytn ?? (
+            (window as any).ethereum?.isKaikas
+              ? (window as any).ethereum
+              : undefined
+          ),
         };
       },
     });
