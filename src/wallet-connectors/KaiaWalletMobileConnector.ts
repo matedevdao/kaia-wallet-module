@@ -67,6 +67,7 @@ class KaiaWalletMobileConnector implements WalletForKaiaConnector {
     const address =
       (await this.request("QR 코드로 Kaia Wallet 접속", requestKey))
         .klaytn_address;
+    this.store.setPermanent("address", address);
     return address;
   }
 
@@ -131,8 +132,8 @@ class KaiaWalletMobileConnector implements WalletForKaiaConnector {
 
   public async signMessage(_: `0x${string}`, message: string): Promise<string> {
     const requestKey = await this.prepare({ type: "sign", sign: { message } });
-    const result = await this.request("QR 코드로 메시지 서명", requestKey);
-    return result.signature;
+    const data = await this.request("QR 코드로 메시지 서명", requestKey);
+    return data.signature;
   }
 }
 
