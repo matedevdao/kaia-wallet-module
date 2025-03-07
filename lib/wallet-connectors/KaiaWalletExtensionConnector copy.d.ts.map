@@ -1,0 +1,1 @@
+{"version":3,"file":"KaiaWalletExtensionConnector copy.d.ts","sourceRoot":"","sources":["../../src/wallet-connectors/KaiaWalletExtensionConnector copy.ts"],"names":[],"mappings":"AACA,OAAO,cAAc,MAAM,8CAA8C,CAAC;AAC1E,OAAO,oBAAoB,MAAM,2BAA2B,CAAC;AAE7D,cAAM,4BAA6B,SAAQ,oBAAoB;IACtD,QAAQ,SAAiB;IACzB,UAAU,SAAiB;IAC3B,UAAU,iBAAwB;IAElC,IAAI;CAWZ;;AAED,wBAAkD"}

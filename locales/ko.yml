@@ -12,3 +12,7 @@ klip_qr_modal:
   guide: "QR 코드 리더기 또는 클립 앱을 통해 QR 코드를 스캔해주세요.\n클립 앱 실행 ▶ 하단 QR 버튼 터치 ▶ 코드 스캔 후 로그인"
   button:
     cancel: "취소"
+kaia_wallet_mobile_qr_modal:
+  guide: "QR 코드 리더기 또는 Kaia Wallet 앱을 통해 QR 코드를 스캔해주세요.\nKaia Wallet 앱 실행 ▶ 상단 우측 QR 버튼 터치 ▶ 코드 스캔 후 로그인"
+  button:
+    cancel: "취소"

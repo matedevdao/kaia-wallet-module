@@ -12,3 +12,7 @@ klip_qr_modal:
   guide: "Scan the QR code using a QR code reader or the Klip app.\nOpen the Klip app ▶ Tap the QR button at the bottom ▶ Scan the code and log in."
   button:
     cancel: "Cancel"
+kaia_wallet_mobile_qr_modal:
+  guide: "Scan the QR code using a QR code reader or the Kaia Wallet app.\nOpen the Kaia Wallet app ▶ Tap the QR button at the top right ▶ Scan the code and log in."
+  button:
+    cancel: "Cancel"

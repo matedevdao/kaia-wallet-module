@@ -1,5 +1,6 @@
 import { Abi } from "viem";
-import KaiaWalletConnector from "./wallet-connectors/KaiaWalletConnector.js";
+import KaiaWalletExtensionConnector from "./wallet-connectors/KaiaWalletExtensionConnector.js";
+import KaiaWalletMobileConnector from "./wallet-connectors/KaiaWalletMobileConnector.js";
 import KlipConnector from "./wallet-connectors/KlipConnector.js";
 import MetaMaskConnector from "./wallet-connectors/MetaMaskConnector.js";
 import WagmiWalletConnector from "./wallet-connectors/WagmiWalletConnector.js";
@@ -8,7 +9,9 @@ import WalletForKaiaConnector from "./wallet-connectors/WalletForKaiaConnector.j
 
 class UniversalKaiaWalletConnector {
   public connectors: WalletForKaiaConnector[] = [
-    KaiaWalletConnector,
+    (window as any).klaytn
+      ? KaiaWalletExtensionConnector
+      : KaiaWalletMobileConnector,
     KlipConnector,
     MetaMaskConnector,
     WalletConnectConnector,
