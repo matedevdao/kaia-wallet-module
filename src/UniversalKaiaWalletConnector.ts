@@ -1,4 +1,4 @@
-import { BrowserInfo } from "@common-module/app";
+import { Browser } from "@common-module/app";
 import { Abi } from "viem";
 import KaiaWalletExtensionConnector from "./wallet-connectors/KaiaWalletExtensionConnector.js";
 import KaiaWalletMobileConnector from "./wallet-connectors/KaiaWalletMobileConnector.js";
@@ -10,7 +10,7 @@ import WalletForKaiaConnector from "./wallet-connectors/WalletForKaiaConnector.j
 
 class UniversalKaiaWalletConnector {
   public connectors: WalletForKaiaConnector[] = [
-    !BrowserInfo.isMobileDevice() && (window as any).klaytn
+    !Browser.isMobileDevice() && (window as any).klaytn
       ? KaiaWalletExtensionConnector
       : KaiaWalletMobileConnector,
     KlipConnector,

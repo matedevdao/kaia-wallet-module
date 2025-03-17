@@ -1,4 +1,4 @@
-import { BrowserInfo, Store } from "@common-module/app";
+import { Browser, Store } from "@common-module/app";
 import { Abi } from "abitype";
 import QrCode from "qrcode";
 import KaiaWalletModuleConfig from "../KaiaWalletModuleConfig.js";
@@ -19,7 +19,7 @@ class KaiaWalletMobileConnector implements WalletForKaiaConnector {
     let resultReceived = false;
     let reject: any;
 
-    if (BrowserInfo.isMobileDevice()) {
+    if (Browser.isMobileDevice()) {
       location.href = `kaikas://wallet/api?request_key=${requestKey}`;
     } else {
       const qr = await QrCode.toDataURL(
