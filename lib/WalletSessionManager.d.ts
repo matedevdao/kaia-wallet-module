@@ -1,4 +1,4 @@
-import { EventContainer } from "@common-module/ts";
+import { EventContainer } from "@commonmodule/ts";
 import { Config, EstimateGasParameters, ReadContractParameters, WriteContractParameters } from "@wagmi/core";
 import { type Abi, type ContractFunctionArgs, type ContractFunctionName, DecodeEventLogReturnType } from "viem";
 declare class WalletSessionManager extends EventContainer<{

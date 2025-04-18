@@ -1,4 +1,4 @@
-import { Browser } from "@common-module/app";
+import { Browser } from "@commonmodule/app";
 import { Abi } from "viem";
 import KaiaWalletExtensionConnector from "./wallet-connectors/KaiaWalletExtensionConnector.js";
 import KaiaWalletMobileConnector from "./wallet-connectors/KaiaWalletMobileConnector.js";

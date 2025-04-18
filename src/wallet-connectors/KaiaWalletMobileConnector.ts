@@ -1,4 +1,4 @@
-import { Browser, Store } from "@common-module/app";
+import { Browser, Store } from "@commonmodule/app";
 import { Abi } from "abitype";
 import QrCode from "qrcode";
 import KaiaWalletModuleConfig from "../KaiaWalletModuleConfig.js";

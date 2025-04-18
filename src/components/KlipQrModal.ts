@@ -1,10 +1,10 @@
-import { el, msg } from "@common-module/app";
+import { el, msg } from "@commonmodule/app";
 import {
   AppCompConfig,
   Button,
   ButtonType,
   StructuredModal,
-} from "@common-module/app-components";
+} from "@commonmodule/app-components";
 
 export default class KlipQrModal extends StructuredModal {
   constructor(title: string, qr: string) {

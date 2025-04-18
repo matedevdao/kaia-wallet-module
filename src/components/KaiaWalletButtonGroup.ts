@@ -1,7 +1,7 @@
-import { Button, ButtonGroup, ButtonType } from "@common-module/app-components";
+import { Button, ButtonGroup, ButtonType } from "@commonmodule/app-components";
 import UniversalKaiaWalletConnector from "../UniversalKaiaWalletConnector.js";
 import WalletForKaiaConnector from "../wallet-connectors/WalletForKaiaConnector.js";
-import { msg } from "@common-module/app";
+import { msg } from "@commonmodule/app";
 
 export default class KaiaWalletButtonGroup extends ButtonGroup {
   constructor(

@@ -1,4 +1,4 @@
-import { StructuredModal } from "@common-module/app-components";
+import { StructuredModal } from "@commonmodule/app-components";
 interface NetworkMismatchModalOptions {
     currentChainId?: number;
     targetChainId: number;

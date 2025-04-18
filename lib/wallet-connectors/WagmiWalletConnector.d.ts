@@ -1,4 +1,4 @@
-import { DomNode } from "@common-module/app";
+import { DomNode } from "@commonmodule/app";
 import { Config, CreateConnectorFn, WriteContractParameters } from "@wagmi/core";
 import { type Abi, type ContractFunctionArgs, type ContractFunctionName } from "viem";
 import WalletForKaiaConnector from "./WalletForKaiaConnector.js";

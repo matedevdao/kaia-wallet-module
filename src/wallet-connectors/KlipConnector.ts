@@ -1,7 +1,7 @@
 // @ts-ignore
 import { getResult, prepare, request } from "klip-sdk";
 
-import { Store } from "@common-module/app";
+import { Store } from "@commonmodule/app";
 import { Abi } from "abitype";
 import QrCode from "qrcode";
 import KaiaWalletModuleConfig from "../KaiaWalletModuleConfig.js";

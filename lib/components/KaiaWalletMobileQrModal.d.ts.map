@@ -1,1 +1,1 @@
-{"version":3,"file":"KaiaWalletMobileQrModal.d.ts","sourceRoot":"","sources":["../../src/components/KaiaWalletMobileQrModal.ts"],"names":[],"mappings":"AACA,OAAO,EAIL,eAAe,EAChB,MAAM,+BAA+B,CAAC;AAEvC,MAAM,CAAC,OAAO,OAAO,uBAAwB,SAAQ,eAAe;gBACtD,KAAK,EAAE,MAAM,EAAE,EAAE,EAAE,MAAM;CAwBtC"}
+{"version":3,"file":"KaiaWalletMobileQrModal.d.ts","sourceRoot":"","sources":["../../src/components/KaiaWalletMobileQrModal.ts"],"names":[],"mappings":"AACA,OAAO,EAIL,eAAe,EAChB,MAAM,8BAA8B,CAAC;AAEtC,MAAM,CAAC,OAAO,OAAO,uBAAwB,SAAQ,eAAe;gBACtD,KAAK,EAAE,MAAM,EAAE,EAAE,EAAE,MAAM;CAwBtC"}

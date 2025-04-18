@@ -1,4 +1,4 @@
-import { EventContainer } from "@common-module/ts";
+import { EventContainer } from "@commonmodule/ts";
 import { Abi } from "viem";
 declare class KaiaWalletSessionManager extends EventContainer<{
     sessionChanged: (connected: boolean) => void;

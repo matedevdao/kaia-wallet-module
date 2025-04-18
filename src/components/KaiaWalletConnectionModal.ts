@@ -1,5 +1,5 @@
-import { el, msg } from "@common-module/app";
-import { Button, StructuredModal } from "@common-module/app-components";
+import { el, msg } from "@commonmodule/app";
+import { Button, StructuredModal } from "@commonmodule/app-components";
 import WalletForKaiaConnector from "../wallet-connectors/WalletForKaiaConnector.js";
 import KaiaWalletButtonGrouop from "./KaiaWalletButtonGroup.js";
 
