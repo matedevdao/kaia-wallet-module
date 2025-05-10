@@ -1,4 +1,4 @@
-import { DomNode } from "@commonmodule/app";
+import { Dom } from "@commonmodule/app";
 import {
   Config,
   connect,
@@ -26,7 +26,7 @@ export default abstract class WagmiWalletConnector
   implements WalletForKaiaConnector {
   abstract walletId: string;
   abstract walletName: string;
-  abstract walletIcon: DomNode;
+  abstract walletIcon: Dom;
 
   private _wagmiConnector?: CreateConnectorFn;
   public get wagmiConnector() {

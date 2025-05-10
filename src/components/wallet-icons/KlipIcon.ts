@@ -1,6 +1,6 @@
-import { DomNode } from "@commonmodule/app";
+import { Dom } from "@commonmodule/app";
 
-export default class KlipIcon extends DomNode {
+export default class KlipIcon extends Dom {
   constructor() {
     super(".icon.klip");
     this.htmlElement.innerHTML =

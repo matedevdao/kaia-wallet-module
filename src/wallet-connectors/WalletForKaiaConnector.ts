@@ -1,10 +1,10 @@
-import { DomNode } from "@commonmodule/app";
+import { Dom } from "@commonmodule/app";
 import { Abi } from "viem";
 
 export default interface WalletForKaiaConnector {
   walletId: string;
   walletName: string;
-  walletIcon: DomNode;
+  walletIcon: Dom;
   connect(): Promise<`0x${string}` | undefined>;
   disconnect(): void;
   getChainId(): number | undefined;

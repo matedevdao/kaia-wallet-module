@@ -1,11 +1,11 @@
-import { DomNode } from "@commonmodule/app";
+import { Dom } from "@commonmodule/app";
 import { Config, CreateConnectorFn, WriteContractParameters } from "@wagmi/core";
 import { type Abi, type ContractFunctionArgs, type ContractFunctionName } from "viem";
 import WalletForKaiaConnector from "./WalletForKaiaConnector.js";
 export default abstract class WagmiWalletConnector implements WalletForKaiaConnector {
     abstract walletId: string;
     abstract walletName: string;
-    abstract walletIcon: DomNode;
+    abstract walletIcon: Dom;
     private _wagmiConnector?;
     get wagmiConnector(): CreateConnectorFn;
     set wagmiConnector(connector: CreateConnectorFn);

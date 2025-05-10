@@ -1,6 +1,6 @@
-import { DomNode } from "@commonmodule/app";
+import { Dom } from "@commonmodule/app";
 
-export default class KaiaWalletIcon extends DomNode {
+export default class KaiaWalletIcon extends Dom {
   constructor() {
     super(".icon.kaia-wallet");
     this.htmlElement.innerHTML =
