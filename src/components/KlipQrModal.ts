@@ -15,7 +15,7 @@ export default class KlipQrModal extends StructuredModal {
       new Button(".close", {
         type: ButtonType.Icon,
         icon: new AppCompConfig.CloseIcon(),
-        onClick: () => this.remove(),
+        onPress: () => this.remove(),
       }),
     );
 
@@ -27,7 +27,7 @@ export default class KlipQrModal extends StructuredModal {
     this.appendToFooter(
       new Button({
         title: msg("klip_qr_modal.button.cancel"),
-        onClick: () => this.remove(),
+        onPress: () => this.remove(),
       }),
     );
   }

@@ -25,7 +25,7 @@ export default class KaiaWalletConnectionModal extends StructuredModal {
     this.appendToFooter(
       new Button(".cancel", {
         title: msg("kaia_wallet_connection_modal.button.cancel"),
-        onClick: () => this.remove(),
+        onPress: () => this.remove(),
       }),
     );
 

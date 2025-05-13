@@ -18,7 +18,7 @@ export default class KaiaWalletButtonGroup extends ButtonGroup {
             buttonText,
             walletName: connector.walletName,
           }),
-          onClick: () => onWalletSelect(connector),
+          onPress: () => onWalletSelect(connector),
         })
       ),
     );
