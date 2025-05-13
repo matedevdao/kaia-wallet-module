@@ -1,0 +1,1 @@
+{"version":3,"file":"KaiaWalletAvatar.d.ts","sourceRoot":"","sources":["../../src/components/KaiaWalletAvatar.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,GAAG,EAAE,MAAM,mBAAmB,CAAC;AA+CxC,MAAM,CAAC,OAAO,OAAO,gBAAiB,SAAQ,GAAG;gBACnC,aAAa,EAAE,MAAM,EAAE,OAAO,EAAE;QAAE,IAAI,EAAE,MAAM,CAAA;KAAE;CAmE7D"}
